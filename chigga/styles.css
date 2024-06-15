@@ -1,0 +1,566 @@
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+
+header {
+    position: fixed; /* Make the header fixed */
+    top: 0; /* Position it at the top of the viewport */
+    width: 100%; /* Ensure it spans the full width of the viewport */
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    padding: 1em 0;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.nav-left h1 {
+    margin: 0;
+}
+
+.nav-center ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    color: rgb(0, 0, 0);
+    justify-content: flex-start; /* Align the items to the left */
+}
+
+.nav-center ul li {
+    margin: 0 1em;
+    color: rgb(0, 0, 0);
+}
+
+.nav-center ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for color and text shadow */
+
+}
+
+
+.nav-center ul li a:hover,
+.nav-center ul li a:active,
+.nav-center ul li a.active {
+    color: red; /* Change text color to red on hover, click, and when active */
+    /* Red glow effect 
+    if u wanna add the lil box shadow thing around the text then undelete this shit
+    box-shadow: 0 0 10px 4px red; 
+    */
+    text-shadow: 0 0 20px red, 0 0 40px red, 0 0 60px red; /* Increase the size of the red glow */
+}
+
+
+.nav-right {
+    margin-left: auto; /* Push the button to the far right */
+}
+
+.download-cv {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 0, 0);
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.download-cv:hover {
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px 4px rgb(255, 0, 0); /* Add a glow effect on hover */
+}
+
+.section {
+    padding: 2em;
+    color: rgb(0, 0, 0);
+}
+
+
+
+/* HOME */
+
+
+
+.home {
+    background: linear-gradient(to bottom, #000000, #000000); /* Purple gradient */
+    height: 45vh; /* Adjust this to set the height of the home section */
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    padding: 8em; /* Keep the padding for spacing around the content */
+}
+
+.home-content {
+    max-width: 1200px;
+    padding: 1em; /* Keep the padding for spacing around the content */
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center horizontally */
+}
+
+.home-image {
+    margin-bottom: 3em; /* Add space between heading and image */
+}
+
+
+.home-image {
+    position: relative;
+}
+
+.home-image img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 1s ease; /* Add a transition for the transform property */
+}
+
+.home-image::before {
+    content: '';
+    position: absolute;
+    top: 0px; /* Adjust the distance of the glow from the top */
+    left: 0px; /* Adjust the distance of the glow from the left */
+    width: 300px; /* Adjust the width of the glow */
+    height: 300px; /* Adjust the height of the glow */
+    border-radius: 50%; /* Ensure the glow is circular */
+    box-shadow: 0 0 20px 5px red; /* Red glow effect */
+}
+
+.home-image img:hover {
+    transform: rotateY(180deg); /* Apply a rotation on hover */
+}
+
+#hover-image {
+    display: none; /* Initially hide the hover image */
+}
+
+.home-image:hover #main-image {
+    display: none; /* Hide the main image on hover */
+}
+
+.home-image:hover #hover-image {
+    display: inline-block; /* Show the hover image on hover */
+}
+
+
+.home-text {
+    color: #ffffff;
+    text-align: center; /* Center text horizontally */
+    margin-bottom: 1em; /* Adjust this to reduce the space between the text and the image */
+    font-size: 17px;
+    font-weight: 380;
+}
+
+
+.home-text h2 {
+    font-size: 2.4em; /* Increase the font size for the heading */
+    font-weight: 400; /* Medium font weight */
+}
+
+.highlight {
+    color: red; /* Make the text red */
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.5), 0 0 15px rgba(255, 0, 0, 0.5); /* Add glow effect */
+}
+
+
+
+
+
+/* SERVICES */
+
+.services {
+    background: linear-gradient(to bottom, #272626, #272626); /* Purple gradient */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 25vh; /* Adjust this to set the height of the home section */
+
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjusted to three columns */
+    gap: 2em;
+    max-width: 1200px;
+    margin-top: 1em;
+}
+
+.service-box {
+    background-color: #272626;
+    color: #ffffff;
+    padding: 1em;
+    border-radius: 8px;
+    width: 200px;
+    box-shadow: 0 0 10px #EC3D2E;
+    text-align: left;
+    transition: box-shadow 0.3s ease; /* Add transition for smooth effect */
+}
+
+.service-box:hover,
+.service-box:active {
+    box-shadow: 0 0 30px #EC3D2E; /* Add glow effect on hover/click */
+}
+
+.service-box h3 {
+    margin-top: 0;
+}
+
+.service-box .small-text {
+    font-size: 0.9em;
+}
+
+/* Ensure link text within service-box remains white */
+.service-box a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.service-box a:hover {
+    text-decoration: underline; /* Optional: underline on hover */
+}
+
+
+/* SKILLS  */
+
+.skills {
+    background: linear-gradient(to bottom, #272626, #272626); /* Purple gradient */
+    height: 2vh; /* Adjust height to provide enough space */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    width: 100%; /* Full width to allow proper centering */
+    height: 100%; /* Full height to allow proper centering */
+}
+
+.skill-item {
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
+
+.skills-container img {
+    width: 60%; /* Adjust width as needed */
+    object-fit: cover;
+    border-radius: 8px; /* Optional: Adjust the border radius if needed */
+}
+
+
+
+/* ABOUT  */
+
+
+
+.about {
+    background: linear-gradient(to bottom, #ffffff, #ffffff); /* Purple gradient */
+    padding: 2em 0; /* Add padding for spacing */
+    text-align: center; /* Center the text */
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+    padding: 0 7em; /* Add padding to the sides */
+}
+
+.about p {
+    color: #000000; /* Set text color */
+    line-height: 1.5; /* Adjust line height for readability */
+    margin: 10; /* Remove default margin */
+    font-size: 1em; /* Adjust font size to be smaller */
+
+}
+
+
+
+/* Work Experience section */
+.education {
+    background: linear-gradient(to bottom, #000000, #000000); /* Background gradient */
+    position: relative;
+    padding: 2em 0; /* Adjust padding as needed */
+    text-align: center; /* Center align the text */
+}
+
+.education h2 {
+    color: white; /* White color for the heading */
+    margin-bottom: 1em; /* Margin below the heading */
+    font-weight: 300; /* Medium font weight */
+
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+    padding: 0 1em;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #EC3D2E;
+}
+
+.timeline-event {
+    position: relative;
+    width: 50%;
+    padding: 1em;
+    box-sizing: border-box;
+    transition: box-shadow 0.4s ease;
+}
+
+.timeline-event.right {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-event.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-event::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.timeline-event.right::before {
+    left: -8px;
+    border-width: 8px 8px 8px 0;
+    border-color: transparent #EC3D2E transparent transparent;
+}
+
+.timeline-event.left::before {
+    right: -8px;
+    border-width: 8px 0 8px 8px;
+    border-color: transparent transparent transparent #EC3D2E;
+}
+
+.timeline-event .content {
+    color: #ffffff; /* Text color */
+    background-color: #000000;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 0 2px #EC3D2E, 0 0 2px #EC3D2E; /* Add glow effect on hover */
+    border: 0.7px solid #EC3D2E; /* Add this line to include a border */
+}
+
+.timeline-event .content h3 {
+    margin-top: 0;
+    font-weight: 400; /* Medium font weight */
+
+}
+
+.timeline-event .content p {
+    margin-bottom: 0;
+    font-weight: 350; /* Medium font weight */
+
+}
+
+.timeline-event:hover .content {
+    box-shadow: 0 0 20px 4px #EC3D2E; /* Add glow effect on hover */
+    transition: box-shadow 0.4s ease; /* Add transition for smooth effect */
+}
+
+
+
+
+
+
+/* Projects section */
+.projects {
+    background: linear-gradient(to bottom, #000000, #000000); /* Background gradient */
+    padding: 1em 0; /* Adjust padding as needed */
+    text-align: center; /* Center align the text */
+    height: 92vh; /* Adjust this to set the height of the home section */
+
+}
+
+.projects h2 {
+    color: white; /* White color for the heading */
+    margin-bottom: 2em; /* Margin below the heading */
+    font-weight: 300; /* Medium font weight */
+
+}
+
+.projects p {
+    color: white; /* White color for the text */
+    margin-bottom: 1em; /* Increase the margin below the paragraph */
+    font-weight: 300; /* Medium font weight */
+    padding: 0 4em; /* Add padding to the sides */
+    font-size: 16px;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+    gap: 2.5em; /* Increase gap between boxes */
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+    justify-items: center; /* Center items within their grid cells */
+    margin-bottom: 3em; /* Increase margin between project boxes and paragraph */
+
+}
+
+.project-item {
+    background-color: #000000; /* Background color for the boxes */
+    width: 200px; /* Fixed width */
+    height: 200px; /* Fixed height */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center;
+    box-shadow: 0 2px 2px #EC3D2E; /* Add box shadow for effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #EC3D2E; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    position: relative;
+    overflow: hidden;
+    padding: 1em; /* Add padding for content */
+}
+
+.project-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.project-description {
+    color: #ffffff; /* Text color */
+    opacity: 0; /* Initially hide the paragraph */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for reveal */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 95%;
+    padding: 1em;
+}
+
+.project-item:hover img {
+    opacity: 0; /* Hide the image on hover */
+    transform: scale(1.1); /* Slight zoom-out effect */
+}
+
+.project-item:hover .project-description {
+    opacity: 1; /* Reveal the paragraph on hover */
+    transform: translate(-50%, -50%) scale(1); /* Ensure it's centered and scaled properly */
+}
+
+
+
+
+
+
+
+/* Contact section */
+.contact {
+    background: linear-gradient(to bottom, #272626, #272626); /* Purple gradient */
+    text-align: center; /* Center align text */
+    color: white; /* Ensure all text in the contact section is white */
+    padding: 2em; /* Add padding for spacing */
+}
+
+/* Make sure all text elements in the contact section are white */
+.contact h2,
+.contact p,
+.contact .small-text,
+.contact label {
+    color: white;
+    font-weight: 300; /* Medium font weight */
+
+}
+
+.contact-icons {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the icons */
+    gap: 2em; /* Space between icons */
+    margin-top: 1em; /* Margin at the top */
+}
+
+.contact-icon {
+    text-align: center; /* Center align text within each icon container */
+}
+
+.contact-icon img {
+    width: 30px; /* Width of the icon */
+    height: 30px; /* Height of the icon */
+    border-radius: 50%; /* Make the icon circular */
+}
+
+.contact-box form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align form elements */
+}
+
+.contact-box label {
+    margin-bottom: 0.5em;
+    color: white;
+}
+
+.contact-box input,
+.contact-box textarea {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: none;
+    border-radius: 4px;
+    width: 80%; /* Adjust width as needed */
+}
+
+.contact-box button {
+    padding: 0.5em;
+    background-color: white;
+    color: red;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contact-box button:hover {
+    background-color: #f0f0f0;
+}
